@@ -13,6 +13,17 @@ import csv
 
 # Main Function
 def main():
+    outFile = open("out.csv", "w")
+    while(True):
+        fName = input("Name of file: ")
+        try:
+            f = open(fName, "r")
+            break
+        except:
+            print("File not found")
+
+    f.close()
+    outFile.close()
     return 0
 
 # Start Main on Launch
