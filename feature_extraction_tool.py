@@ -24,6 +24,7 @@ def main():
 
     f.close()
     outFile.close()
+    print("the file is closed pookie bear")
     return 0
 
 # Start Main on Launch
