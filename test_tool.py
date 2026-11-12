@@ -39,21 +39,21 @@ class TestTool:
 
         # Empty Line
         if (len(inspect_line) == 0):
-            return
+            return False
 
         # Comment Line
         if (inspect_line[0].startswith("//")):
-            return
+            return False
 
-        return line
+        return True
 
     # Run Detail Method
     def run_detail(self, VerilogFolder):
         for file in VerilogFolder:
             current_file = open(file, "r")
             for raw_line in current_file:
-                line = self._ignore_c(raw_line.strip())
-                print(line)
+                if (self._ignore_c(raw_line.strip())):
+                    print(raw_line.strip())
             sleep(10)
 
             current_file.close()
