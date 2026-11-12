@@ -31,7 +31,6 @@ class TestTool:
 
         return VerilogList
 
-        
     
     # Ignore Comments Method
     def _ignore_c(self, line):
@@ -54,7 +53,7 @@ class TestTool:
             for raw_line in current_file:
                 if (self._ignore_c(raw_line.strip())):
                     print(raw_line.strip())
-            sleep(10)
+            sleep(100)
 
             current_file.close()
 
