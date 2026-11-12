@@ -8,6 +8,7 @@ import os
 import sys
 import csv
 
+from test_tool import TestTool
 
 # === [Section 02] === #
 # Python Functions    
@@ -21,7 +22,7 @@ def main(argc, argv):
     # Operation Switching
     if (argc == 2):
         if argv[1] == "test":
-            print("\033[94mUsing Test Module\033[0m")
+            print(f"\033[94mUsing Test Module\033[0m\n")
             CurrentOperation = "TEST"
 
     # Regular Operation
@@ -37,6 +38,10 @@ def main(argc, argv):
 
         f.close()
         outFile.close()
+
+    # Testing Operation
+    if (CurrentOperation == "TEST"):
+        TestTool()
 
     # Exit Program
     print("\033[93mTerminating Program\033[0m")
